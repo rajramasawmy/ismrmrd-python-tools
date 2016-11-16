@@ -150,7 +150,7 @@ def calculate_csm_inati_iter(im, smoothing=5, niter=5, thresh=1e-3,
         raise ValueError("smoothing should be an int or a 3-element 1D array")
 
     if images_are_2D:
-        smoothing[2] = 1  # no smoothing along z in 2D case
+        smoothing[0] = 1  # no smoothing along z in 2D case
 
     # smoothing kernel is size 1 on the coil axis
     smoothing = np.concatenate(([1, ], smoothing), axis=0)
